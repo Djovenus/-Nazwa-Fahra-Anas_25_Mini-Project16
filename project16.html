@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Project 16</title>
+  <script>
+   function updateClock() {
+ var element = document.getElementById('clock');
+ var now = new Date();
+ var hours = now.getHours();
+ var minutes = now.getMinutes();
+ var seconds = now.getSeconds();
+
+ if (hours < 10) {
+     hours = "0" + hours;
+     }
+ if (minutes < 10) {
+    minutes = "0" + minutes;
+    }
+ if (seconds < 10) {
+    seconds = "0" + seconds;
+    }
+
+ var timeString = hours + ":" + minutes + ":" + seconds;
+    element.textContent = timeString;
+
+ if (seconds % 2 === 0) {
+    element.style.borderColor = "red";
+    } else {
+    element.style.borderColor = "blue";
+  }
+ }
+  setInterval(updateClock, 1000);
+  updateClock();
+    </script>
+</head>
+<body style="justify-content: center; display: flex; ">
+    <div id="clock" style="font-size: 55px; padding: 50px; border: 10px solid; border-radius: 50px; transition: border-color 0.3s ease; margin-top: 30%;"></div>
+</body>
+</html>
